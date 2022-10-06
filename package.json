@@ -23,7 +23,9 @@
     "coverage": "npm run coverage:merge && npm run coverage:merge-report",
     "coverage:clean": "rm -rf .nyc_output && rm -rf coverage",
     "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json ./coverage/e2e/coverage-final.json",
-    "coverage:merge-report": "nyc report --reporter=lcov --reporter=text --reporter=json --temp-dir=./coverage/merged --report-dir=./coverage/merged"
+    "coverage:merge-report": "nyc report --reporter=lcov --reporter=text --reporter=json --temp-dir=./coverage/merged --report-dir=./coverage/merged",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "nyc": {
     "reporter": [
@@ -67,7 +69,7 @@
     "cors": "^2.8.5",
     "date-fns": "^2.16.1",
     "dotenv-safe": "^8.2.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.7",
     "expeditious-engine-redis": "^0.1.2",
     "express": "^4.17.1",
     "express-expeditious": "^5.1.1",
@@ -75,17 +77,18 @@
     "helmet": "^4.4.1",
     "i18n": "^0.13.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.13",
+    "mongoose": "^5.13.15",
     "mongoose-paginate-v2": "^1.3.13",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.4.17",
+    "nodemailer": "^6.6.1",
     "nodemailer-mailgun-transport": "^2.0.2",
-    "passport": "^0.4.1",
+    "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "request-ip": "^2.1.3",
     "trim-request": "^1.0.6",
     "uuid": "^8.3.2",
-    "validator": "^13.5.2"
+    "validator": "^13.7.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -137,5 +140,6 @@
     "chai",
     "redis",
     "JSDoc"
-  ]
+  ],
+  "snyk": true
 }
